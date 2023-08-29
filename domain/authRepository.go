@@ -3,7 +3,7 @@ package domain
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ashishjuyal/banking-lib/logger"
+	"github.com/hoanbentley/banking/logger"
 	"net/http"
 	"net/url"
 )

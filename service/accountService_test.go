@@ -1,11 +1,11 @@
 package service
 
 import (
-	"github.com/ashishjuyal/banking-lib/errs"
-	realdomain "github.com/ashishjuyal/banking/domain"
-	"github.com/ashishjuyal/banking/dto"
-	"github.com/ashishjuyal/banking/mocks/domain"
 	"github.com/golang/mock/gomock"
+	realdomain "github.com/hoanbentley/banking/domain"
+	"github.com/hoanbentley/banking/dto"
+	"github.com/hoanbentley/banking/errs"
+	"github.com/hoanbentley/banking/mocks/domain"
 	"testing"
 )
 

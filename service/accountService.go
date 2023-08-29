@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/ashishjuyal/banking-lib/errs"
-	"github.com/ashishjuyal/banking/domain"
-	"github.com/ashishjuyal/banking/dto"
+	"github.com/hoanbentley/banking/domain"
+	"github.com/hoanbentley/banking/dto"
+	"github.com/hoanbentley/banking/errs"
 	"time"
 )
 
@@ -58,7 +58,7 @@ func (s DefaultAccountService) MakeTransaction(req dto.TransactionRequest) (*dto
 		return nil, appError
 	}
 	response := transaction.ToDto()
-	return &response, nil
+	return (&response), nil
 }
 
 func NewAccountService(repo domain.AccountRepository) DefaultAccountService {

@@ -2,10 +2,10 @@ package app
 
 import (
 	"fmt"
-	"github.com/ashishjuyal/banking-lib/logger"
-	"github.com/ashishjuyal/banking/domain"
-	"github.com/ashishjuyal/banking/service"
 	"github.com/gorilla/mux"
+	"github.com/hoanbentley/banking/domain"
+	"github.com/hoanbentley/banking/logger"
+	"github.com/hoanbentley/banking/service"
 	"github.com/jmoiron/sqlx"
 	"log"
 	"net/http"
@@ -37,7 +37,6 @@ func Start() {
 	router := mux.NewRouter()
 
 	//wiring
-	//ch := CustomerHandlers{service.NewCustomerService(domain.NewCustomerRepositoryStub())}
 	dbClient := getDbClient()
 	customerRepositoryDb := domain.NewCustomerRepositoryDb(dbClient)
 	accountRepositoryDb := domain.NewAccountRepositoryDb(dbClient)
@@ -62,8 +61,6 @@ func Start() {
 		Methods(http.MethodPost).
 		Name("NewTransaction")
 
-	//am := AuthMiddleware{domain.NewAuthRepository()}
-	//router.Use(am.authorizationHandler())
 	// starting server
 	address := os.Getenv("SERVER_ADDRESS")
 	port := os.Getenv("SERVER_PORT")
